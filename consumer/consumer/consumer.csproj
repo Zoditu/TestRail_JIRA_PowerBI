@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{845B3D9E-3EAF-4BC9-A663-1246EE69D123}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>consumer</RootNamespace>
+    <AssemblyName>consumer</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\ConsumerTestRail\ConsumerTestRail\bin\Release\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Policy.12.0.Microsoft.Office.Interop.Excel" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\Controllers\APIController.cs" />
+    <Compile Include="Application\Helpers\APICollector.cs" />
+    <Compile Include="Application\Helpers\DataTableExtension.cs" />
+    <Compile Include="Application\Helpers\Logger.cs" />
+    <Compile Include="Application\Helpers\RegularExpressionsExtension.cs" />
+    <Compile Include="Application\Helpers\UNIX.cs" />
+    <Compile Include="Application\Helpers\WorkbookCreation.cs" />
+    <Compile Include="Application\Models\API.cs" />
+    <Compile Include="Application\Models\JiraModels\Issue.cs" />
+    <Compile Include="Application\Models\ReportRow.cs" />
+    <Compile Include="Application\Models\TestRailModels\Area.cs" />
+    <Compile Include="Application\Models\TestRailModels\Case.cs" />
+    <Compile Include="Application\Models\TestRailModels\Feature.cs" />
+    <Compile Include="Application\Models\TestRailModels\Milestone.cs" />
+    <Compile Include="Application\Models\TestRailModels\Priority.cs" />
+    <Compile Include="Application\Models\TestRailModels\Project.cs" />
+    <Compile Include="Application\Models\TestRailModels\Result.cs" />
+    <Compile Include="Application\Models\TestRailModels\Run.cs" />
+    <Compile Include="Application\Models\TestRailModels\Status.cs" />
+    <Compile Include="Application\Models\TestRailModels\Suite.cs" />
+    <Compile Include="Application\Models\TestRailModels\Test.cs" />
+    <Compile Include="Application\Models\TestRailModels\Type.cs" />
+    <Compile Include="Application\Models\TestRailModels\User.cs" />
+    <Compile Include="Gurock\TestRail\APIClient.cs" />
+    <Compile Include="Gurock\TestRail\APIException.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Application" />
+    <Folder Include="Application\Controllers" />
+    <Folder Include="Application\Helpers" />
+    <Folder Include="Application\Models" />
+    <Folder Include="Application\Models\JiraModels" />
+    <Folder Include="Application\Models\TestRailModels" />
+    <Folder Include="Gurock" />
+    <Folder Include="Gurock\TestRail" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

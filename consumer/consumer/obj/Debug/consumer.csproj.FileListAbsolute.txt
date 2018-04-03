@@ -1,0 +1,8 @@
+C:\Users\kevin.martin\Documents\SharpDevelop Projects\consumer\consumer\obj\Debug\consumer.csprojResolveAssemblyReference.cache
+C:\Users\kevin.martin\Documents\SharpDevelop Projects\consumer\consumer\bin\Debug\consumer.exe.config
+C:\Users\kevin.martin\Documents\SharpDevelop Projects\consumer\consumer\bin\Debug\consumer.exe
+C:\Users\kevin.martin\Documents\SharpDevelop Projects\consumer\consumer\bin\Debug\consumer.pdb
+C:\Users\kevin.martin\Documents\SharpDevelop Projects\consumer\consumer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\kevin.martin\Documents\SharpDevelop Projects\consumer\consumer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\kevin.martin\Documents\SharpDevelop Projects\consumer\consumer\obj\Debug\consumer.exe
+C:\Users\kevin.martin\Documents\SharpDevelop Projects\consumer\consumer\obj\Debug\consumer.pdb

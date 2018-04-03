@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{AAAA265D-2FE0-4598-9EC0-049AAE3925B5}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ConsumerTestRail</RootNamespace>
+    <AssemblyName>ConsumerTestRail</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Application\ActionCommand.cs" />
+    <Compile Include="Application\Controllers\APIController.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Application\Helpers\APICollector.cs" />
+    <Compile Include="Application\Helpers\DataTableExtension.cs" />
+    <Compile Include="Application\Helpers\Logger.cs" />
+    <Compile Include="Application\Helpers\RegularExpressionsExtension.cs" />
+    <Compile Include="Application\Helpers\ScrollTextBox.cs" />
+    <Compile Include="Application\Helpers\UNIX.cs" />
+    <Compile Include="Application\Helpers\WorkbookCreation.cs" />
+    <Compile Include="Application\Models\API.cs" />
+    <Compile Include="Application\Models\JiraModels\Issue.cs" />
+    <Compile Include="Application\Models\ReportRow.cs" />
+    <Compile Include="Application\Models\TestRailModels\Area.cs" />
+    <Compile Include="Application\Models\TestRailModels\Case.cs" />
+    <Compile Include="Application\Models\TestRailModels\Feature.cs" />
+    <Compile Include="Application\Models\TestRailModels\Milestone.cs" />
+    <Compile Include="Application\Models\TestRailModels\Priority.cs" />
+    <Compile Include="Application\Models\TestRailModels\Project.cs" />
+    <Compile Include="Application\Models\TestRailModels\Result.cs" />
+    <Compile Include="Application\Models\TestRailModels\Run.cs" />
+    <Compile Include="Application\Models\TestRailModels\Status.cs" />
+    <Compile Include="Application\Models\TestRailModels\Suite.cs" />
+    <Compile Include="Application\Models\TestRailModels\Test.cs" />
+    <Compile Include="Application\Models\TestRailModels\Type.cs" />
+    <Compile Include="Application\Models\TestRailModels\User.cs" />
+    <Compile Include="Application\EventToCommand.cs" />
+    <Compile Include="Application\Views\ConsoleLog.xaml.cs">
+      <DependentUpon>ConsoleLog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Gurock\TestRail\APIClient.cs" />
+    <Compile Include="Gurock\TestRail\APIException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\WPFAssemblyInfo.cs" />
+    <Compile Include="Main.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Application\Views\ConsoleLog.xaml" />
+    <Page Include="Main.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Application\Helpers" />
+    <Folder Include="Application\Models\JiraModels" />
+    <Folder Include="Application\Models\TestRailModels" />
+    <Folder Include="Gurock" />
+    <Folder Include="Application" />
+    <Folder Include="Application\Models" />
+    <Folder Include="Application\Controllers" />
+    <Folder Include="Application\Views" />
+    <Folder Include="Gurock\TestRail" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
